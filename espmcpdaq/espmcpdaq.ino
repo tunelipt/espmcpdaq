@@ -83,8 +83,27 @@ void setup() {
 }
 
 
+void clear_frame(DaqFrame *f)
+{
+  f->head = 0;
+  f->t = 0;
+  f->frame_num = 0;
+  for (int i = 0; i < TOTAL_CHANS; ++i)
+    f->raw[i] = 0;
+  f->foot = 0;
+}
 
-void read_frame(uint16_t* raw16, int32_t avg)
+void fill_frame(DaqFrame *f)
+{
+  f->head = 0xffffffff;
+  f->t = 0xffffffff;
+  f->frame_num = 0xffffffff;
+  for (int i = 0; i < TOTAL_CHANS; ++i)
+    f->raw[i] = 0xffff;
+  f->foot = 0xffffffff;
+}
+
+int read_frame(uint16_t* raw16, int32_t avg)
 {
   int32_t raw[32];
   uint32_t t1;
@@ -94,6 +113,9 @@ void read_frame(uint16_t* raw16, int32_t avg)
     raw[i] = 0;
 
   for (int k = 0; k < avg; ++k){
+    if (Serial.available() > 0){
+      return 1;
+    }
     int *r = raw;
     for (int i = 0; i < 8; ++i)
     {
@@ -114,20 +136,21 @@ void read_frame(uint16_t* raw16, int32_t avg)
   }
   for (int i = 0;  i < TOTAL_CHANS; ++i)
     raw16[i] = raw[i] / avg;
-  
+  return 0;
 }
 const int NSAMPLES=10;
 int16_t raw16[TOTAL_CHANS];
 
 void loop() {
 
+  
   // Parse Command
 
   char cmd; // Command mode '.', '*', '?' or '!'
   char var; // Variable
   int val;
   String s;
-
+  int ans;
   uint32_t t1;
   uint32_t t2;
   uint32_t dt;
@@ -210,11 +233,23 @@ void loop() {
       delay(50);
       Serial.readString();
       
-      Serial.println("START");
-      Serial.println(FPS);
+      //Serial.println("START");
+      //Serial.println(FPS);
       for (int i = 0; i < FPS; ++i){
         t1 = millis();
-        read_frame(frame.raw, AVG);        
+        ans = read_frame(frame.raw, AVG);        
+        if (ans > 0){
+          cmd = Serial.read();
+          if (cmd=='!'){
+            delay(50);
+            //Serial.println("STOP");
+            Serial.readStringUntil('\n');
+
+            fill_frame(&frame);
+            Serial.write((uint8_t *) &frame, FRAME_SIZE);
+            return;
+          }
+        }
         frame.t = t1;
         frame.frame_num = i;
         Serial.write((uint8_t *) &frame, FRAME_SIZE);
@@ -222,16 +257,8 @@ void loop() {
         if ( dt < PERIOD){
           delay(PERIOD - dt);
         }
-        if (Serial.available() > 0){
-          cmd = Serial.read();
-          if (cmd=='!'){
-            delay(50);
-            Serial.println("STOP");
-            Serial.println(i);
-          }
-        }
       }
-      Serial.println("END");
+      //Serial.println("END");
             
     }
     
