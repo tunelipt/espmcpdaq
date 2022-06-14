@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "cta-rescue")(type "Legacy")(uri "${KIPRJMOD}/espmcpdaq-rescue.lib")(options "")(descr ""))
+)
