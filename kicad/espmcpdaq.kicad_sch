@@ -2937,10 +2937,6 @@
 		(uuid "6d6872a4-ebad-48cd-b4da-f99463e3bedb")
 	)
 	(no_connect
-		(at 271.78 83.82)
-		(uuid "7510b31c-dbf1-48b5-85ec-0086d1874558")
-	)
-	(no_connect
 		(at 48.26 142.24)
 		(uuid "7cae5ff4-bee6-4c37-b23c-399f13ea00b0")
 	)
@@ -3512,6 +3508,7 @@
 	)
 	(label "Vref"
 		(at 222.25 119.38 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3522,6 +3519,7 @@
 	)
 	(label "MISO"
 		(at 154.94 146.05 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3532,6 +3530,7 @@
 	)
 	(label "VDD"
 		(at 74.93 73.66 90)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3542,6 +3541,7 @@
 	)
 	(label "CS2"
 		(at 204.47 101.6 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3552,6 +3552,7 @@
 	)
 	(label "MOSI"
 		(at 92.71 143.51 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3562,6 +3563,7 @@
 	)
 	(label "CLK"
 		(at 154.94 148.59 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3572,6 +3574,7 @@
 	)
 	(label "MISO"
 		(at 64.77 144.78 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3582,6 +3585,7 @@
 	)
 	(label "MISO"
 		(at 204.47 106.68 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3592,6 +3596,7 @@
 	)
 	(label "CLK"
 		(at 204.47 66.04 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3602,6 +3607,7 @@
 	)
 	(label "CLK"
 		(at 204.47 109.22 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3612,6 +3618,7 @@
 	)
 	(label "CS4"
 		(at 92.71 140.97 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3622,6 +3629,7 @@
 	)
 	(label "CS1"
 		(at 204.47 58.42 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3632,6 +3640,7 @@
 	)
 	(label "CS3"
 		(at 154.94 140.97 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3642,6 +3651,7 @@
 	)
 	(label "VDD"
 		(at 214.63 119.38 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3652,6 +3662,7 @@
 	)
 	(label "MOSI"
 		(at 154.94 143.51 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3662,6 +3673,7 @@
 	)
 	(label "Vref"
 		(at 110.49 81.28 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3672,6 +3684,7 @@
 	)
 	(label "MOSI"
 		(at 64.77 132.08 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3682,6 +3695,7 @@
 	)
 	(label "CS1"
 		(at 64.77 149.86 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3692,6 +3706,7 @@
 	)
 	(label "MOSI"
 		(at 204.47 104.14 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3702,6 +3717,7 @@
 	)
 	(label "VDD"
 		(at 110.49 76.2 90)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3712,6 +3728,7 @@
 	)
 	(label "VDD"
 		(at 165.1 158.75 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3722,6 +3739,7 @@
 	)
 	(label "Vref"
 		(at 110.49 158.75 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3732,6 +3750,7 @@
 	)
 	(label "Vref"
 		(at 185.42 24.13 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3742,6 +3761,7 @@
 	)
 	(label "Vref"
 		(at 77.47 82.55 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3763,6 +3783,7 @@
 	)
 	(label "VDD"
 		(at 102.87 158.75 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3773,6 +3794,7 @@
 	)
 	(label "CS4"
 		(at 48.26 152.4 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3783,6 +3805,7 @@
 	)
 	(label "Vref"
 		(at 172.72 158.75 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3793,6 +3816,7 @@
 	)
 	(label "VDD"
 		(at 196.85 24.13 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3803,6 +3827,7 @@
 	)
 	(label "VDD"
 		(at 214.63 76.2 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3813,6 +3838,7 @@
 	)
 	(label "MOSI"
 		(at 204.47 60.96 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3823,6 +3849,7 @@
 	)
 	(label "CS2"
 		(at 64.77 134.62 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3833,6 +3860,7 @@
 	)
 	(label "VDD"
 		(at 48.26 167.64 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3843,6 +3871,7 @@
 	)
 	(label "Vref"
 		(at 222.25 76.2 270)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3853,6 +3882,7 @@
 	)
 	(label "MISO"
 		(at 92.71 146.05 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3863,6 +3893,7 @@
 	)
 	(label "CLK"
 		(at 64.77 147.32 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3873,6 +3904,7 @@
 	)
 	(label "MISO"
 		(at 204.47 63.5 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3883,6 +3915,7 @@
 	)
 	(label "CS3"
 		(at 48.26 149.86 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3893,6 +3926,7 @@
 	)
 	(label "CLK"
 		(at 92.71 148.59 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
