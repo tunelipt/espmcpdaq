@@ -2869,16 +2869,34 @@
 		)
 	)
 	(junction
+		(at 127 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1e3137fd-852b-45cf-b7fc-a3cea175cb73")
+	)
+	(junction
 		(at 74.93 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "22803f88-2cee-461b-aade-c476225fd19d")
 	)
 	(junction
+		(at 127 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "51917e1d-d8f5-4007-a4c8-924700a5361e")
+	)
+	(junction
 		(at 69.85 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "997ac957-a5fe-4ee3-a5be-a32634f954b8")
+	)
+	(junction
+		(at 128.27 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b1231052-55a1-40e0-a949-6b98f3cd5040")
 	)
 	(junction
 		(at 74.93 73.66)
@@ -2978,6 +2996,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 55.88) (xy 127 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00c094c9-a141-4937-b02d-abe5da6d48c2")
+	)
+	(wire
+		(pts
 			(xy 234.95 111.76) (xy 248.92 111.76)
 		)
 		(stroke
@@ -2985,6 +3013,16 @@
 			(type default)
 		)
 		(uuid "03d57015-777d-4451-9622-ac7622274107")
+	)
+	(wire
+		(pts
+			(xy 128.27 55.88) (xy 128.27 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04d03dba-3cb5-47c3-8218-eb315e6b9466")
 	)
 	(wire
 		(pts
@@ -3005,6 +3043,16 @@
 			(type default)
 		)
 		(uuid "0c23820e-35bf-4137-a270-8d444000b57b")
+	)
+	(wire
+		(pts
+			(xy 127 53.34) (xy 127 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c52a29e-e529-4131-80a7-a7e882a3b089")
 	)
 	(wire
 		(pts
@@ -3228,6 +3276,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 58.42) (xy 128.27 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fe01ab1-4fe4-46bd-9420-350d4f76433b")
+	)
+	(wire
+		(pts
 			(xy 234.95 63.5) (xy 248.92 63.5)
 		)
 		(stroke
@@ -3435,6 +3493,16 @@
 			(type default)
 		)
 		(uuid "c54c1244-40ba-40b0-b75c-cc40358d5346")
+	)
+	(wire
+		(pts
+			(xy 127 58.42) (xy 127 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cadfd67f-efbf-4262-a32f-aab9dda1e37d")
 	)
 	(wire
 		(pts
@@ -3671,8 +3739,8 @@
 		)
 		(uuid "53b75867-ba79-414f-a85d-a170e6839172")
 	)
-	(label "Vref"
-		(at 110.49 81.28 180)
+	(label "5INV"
+		(at 110.49 76.2 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3680,7 +3748,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6710ae59-05f5-4b4a-8270-0d45e745df93")
+		(uuid "61ebba01-2cf0-48a9-8b28-8e491385bce3")
 	)
 	(label "MOSI"
 		(at 64.77 132.08 0)
@@ -3716,7 +3784,7 @@
 		(uuid "804d009b-3f96-4280-88cf-1c710d238753")
 	)
 	(label "VDD"
-		(at 110.49 76.2 90)
+		(at 127 53.34 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3857,6 +3925,17 @@
 			(justify left bottom)
 		)
 		(uuid "c792b030-6056-4f10-ad3f-c4ecbcbce036")
+	)
+	(label "5INV"
+		(at 128.27 60.96 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c8f227c1-58e6-4457-a762-2b08c2c59f05")
 	)
 	(label "VDD"
 		(at 48.26 167.64 180)
@@ -6565,78 +6644,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x03")
-		(at 115.57 78.74 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-000060baddf4")
-		(property "Reference" "JREF1"
-			(at 117.602 77.6732 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x03"
-			(at 117.602 79.9846 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-3_P5.08mm"
-			(at 115.57 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 115.57 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 115.57 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "140fd46f-acaa-4978-b6df-918ff3b931a7")
-		)
-		(pin "2"
-			(uuid "27a55fb5-50e2-428a-a260-a493b6eca5ff")
-		)
-		(pin "3"
-			(uuid "ae4c26bb-45b6-4aa7-b69e-97d178cefeaa")
-		)
-		(instances
-			(project ""
-				(path "/a9e92cc9-9cb0-45d3-aac2-4432c6b1bd92"
-					(reference "JREF1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "espmcpdaq-rescue:GND-power")
 		(at 110.49 78.74 270)
 		(unit 1)
@@ -8116,6 +8123,221 @@
 			(project "espmcpdaq"
 				(path "/a9e92cc9-9cb0-45d3-aac2-4432c6b1bd92"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 121.92 58.42 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "29a2b6d9-381a-414e-8632-304959a51f44")
+		(property "Reference" "JINV2"
+			(at 119.888 57.3532 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 119.888 59.6646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 121.92 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c993305-b0da-4321-a4f6-79885c0a9318")
+		)
+		(pin "2"
+			(uuid "9cbdce28-501c-4eeb-8b34-25f6f2885af9")
+		)
+		(pin "3"
+			(uuid "7d967c16-3325-4cab-a5c9-0ff4d4889fcf")
+		)
+		(instances
+			(project "espmcpdaq"
+				(path "/a9e92cc9-9cb0-45d3-aac2-4432c6b1bd92"
+					(reference "JINV2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 115.57 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c7c162ec-4144-40c0-b9d9-6df4a8958cbf")
+		(property "Reference" "J5INV1"
+			(at 118.11 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 118.11 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-2_P5.08mm"
+			(at 115.57 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 115.57 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0f0e2d76-19d8-4c19-928f-70d04a55e3cf")
+		)
+		(pin "1"
+			(uuid "0329ddf4-a54d-468b-815d-e589da0ddb88")
+		)
+		(instances
+			(project ""
+				(path "/a9e92cc9-9cb0-45d3-aac2-4432c6b1bd92"
+					(reference "J5INV1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 133.35 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cf1623c3-b2c6-4c77-8cc5-dff9cef22521")
+		(property "Reference" "JINV1"
+			(at 135.382 57.3532 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 135.382 59.6646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 133.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 133.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e46c56da-f993-46f7-bbe3-0e335b4f4a5a")
+		)
+		(pin "2"
+			(uuid "deb0de4d-417c-405d-a13c-d3746c22b530")
+		)
+		(pin "3"
+			(uuid "d8fdca4e-fcc8-497e-b1f7-3e42c380ee8d")
+		)
+		(instances
+			(project "espmcpdaq"
+				(path "/a9e92cc9-9cb0-45d3-aac2-4432c6b1bd92"
+					(reference "JINV1")
 					(unit 1)
 				)
 			)
