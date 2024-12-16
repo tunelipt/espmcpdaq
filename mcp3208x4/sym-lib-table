@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "cta-rescue")(type "Legacy")(uri "${KIPRJMOD}/mcp3208x4-rescue.lib")(options "")(descr ""))
+  (lib (name "espmcpdaq-rescue")(type "KiCad")(uri "${KIPRJMOD}/espmcpdaq-rescue.kicad_sym")(options "")(descr ""))
+)
