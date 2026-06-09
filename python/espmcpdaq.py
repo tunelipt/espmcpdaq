@@ -201,10 +201,16 @@ class ESPDaq(object):
         self.thrd = ESPDaqThread(self)
         self.thrd.start()
         self.acquiring = True
-    def read(self):
+    def finish_daq(self):
         if self.thrd is not None:
             self.thrd.join()
-            
+        
+    def get_frames(self):
+        return self.frames
+    
+    
+    def read(self):
+        self.finish_daq()
         if self.nsamples > 0:
             return self.parse_daqdata(self.frames)
         else:
