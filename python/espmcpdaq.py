@@ -95,7 +95,7 @@ class ESPDaq(object):
             cmd = '.F{}\n'.format(val).encode('ascii')
             self.s.write(cmd)
             return self.s.readline().decode('ascii')
-    
+        
     def scan_raw(self):
         if self.acquiring:
             raise RuntimeError("Already acquiring data!")
@@ -116,42 +116,30 @@ class ESPDaq(object):
             # Check if we should stop acquiring data:
             if self.stopaq:
                 
-                time.sleep(2.5*fdt) # Wait a little
-                foundtrm = False
-                tmpfr = self.s.read(80)
-                if len(tmpfr) == 80:
-                    xtmp = self.decode_frame(tmpfr)
-                    if xtmp[4] == 0xffffffff: # Found the termination frame
-                        foundtrm = True
-                        break
-                    else:
-                        self.frames.append(xtmp) # Appears to be valid frame
                 for iattempt in range(3):
-                    time.sleep(2*fdt)
+                    time.sleep(max(2*fdt,1)) # Wait a little
                     tmpfr = self.s.read(80)
-                    
-                    if len(tmpfr) == 80:
-                        xtmp = self.decode_frame(tmpfr)
-                        if xtmp[4] == 0xffffffff:
-                            foundtrm = True
-                            break
-                if not foundtrm:
-                    time.sleep(fdt)
-                    self.s.read(80)
-                    # I don't know what is going on. IU give up
-                    raise RuntimeError("DAQ stopped but unable to find termination frame!")
-                else:
-                    foundtrm = True
-                    break
-            
+                    if tmpfr == b'':
+                        break
+                        
             else: # Normal operation
                 self.nsamples = i+1
-                tmpfr = self.s.read(80)
+                tmpfr = b''
+                nleft = 80
+                readframe = False
+                for iattempt in range(3):
+                    fr = self.s.read(nleft)
+                    nfr = len(fr)
+                    nleft = nleft - nfr
+                    tmpfr = tmpfr + fr
+                    if nleft == 0:
+                        readframe = True
+                        break
                 xtmp = self.decode_frame(tmpfr)
-                if xtmp[4] != 0xffffffff:
+                if xtmp[4] == 0xff00ff00:
                     self.frames.append(tmpfr)
                 else:
-                    break
+                    continue
         
         self.stopaq = False
         self.acquiring = False
@@ -225,8 +213,8 @@ class ESPDaq(object):
                 
     def stop(self):
         if self.acquiring:
-            self.stopaq = True
             self.s.write(b"!\n")
+            self.stopaq = True
         return
     def isacquiring(self):
         return self.acquiring
