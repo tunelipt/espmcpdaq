@@ -25,42 +25,108 @@ class ESPDaq(object):
         self.s = serial.Serial(dev, speed, timeout=1)
         self.dev = dev
         self.speed = speed
-        self._avg = 100
-        self._period = 100
-        self._fps = 1
+        self.s.close()
+
         self.acquiring = False
         self.nsamples = 0
         self.stopaq = False
         self.frames = []
         self.thrd = None
+        self._avg  = 1
+        self._period = 10
+        self._fps = 1
+        
+        self.avg()
+        self.period()
+        self.fps()
+        
         
     def close(self):
         if self.acquiring:
-            raise RuntimeError("Acquiring data. Stopit first!")
+            raise RuntimeError(101)
         self.s.close()
         return None
+    
     def open(self):
         if self.s.is_open:
             self.close()
         self.s.open()
         return None
-    def avg(self, val=None):
-        if self.acquiring:
-            raise RuntimeError("Can't do this while acquiring data!")
-        if val is None:
-            cmd = '?A\n'.encode('ascii')
+    def get_avg(self):
+        cmd = '?A\n'.encode('ascii')
+        try:
+            self.s.open()
             self.s.write(cmd)
             b = self.s.readline()
-            self._avg = int(b)
-            return self._avg
-        else:
-            if val < 1 or val > 1000:
-                val = 1
-            val = int(val)
-            self._avg = val
-            cmd = '.A{}\n'.format(val).encode('ascii')
+        except:
+            raise
+        finally:
+            self.s.close()
+        self._avg = int(b)
+        return self._avg
+    def set_avg(self, val):
+        val = int(val)
+        if val < 1 or val > 1000:
+            val = 1
+        cmd = '.A{}\n'.format(val).encode('ascii')
+        try:
+            self.s.open()
             self.s.write(cmd)
-            return self.s.readline().decode('ascii')
+            resp = self.s.readline().decode('ascii')
+        except:
+            raise
+        finally:
+            self.s.close()
+        self._avg = val
+        return resp
+
+   def avg(self, val=None):
+        if self.acquiring:
+            return 101, None
+                
+        if val is None:
+            try:
+                val = self.get_avg()
+                return 0, val
+            except:
+                return 111, None
+        else:
+            try:
+                resp = self.set_avg(val)
+                return 0, resp
+            except:
+                return 111, None
+     
+    def get_avg(self):
+        cmd = '?A\n'.encode('ascii')
+        try:
+            self.s.open()
+            self.s.write(cmd)
+            b = self.s.readline()
+        except:
+            raise
+        finally:
+            self.s.close()
+        self._avg = int(b)
+        return self._avg
+
+    def get_period(self, val):
+        val = int(val)
+        if val < 10 or val > 1000:
+            val = 100
+
+        try:
+            cmd = '?P\n'.encode('ascii')
+            self.s.open()
+            self.s.write(cmd)
+            resp = self.s.readline().decode('ascii')
+        except:
+            raise
+        finally:
+            self.s.close()
+        self._avg = val
+        return resp
+    
     def period(self, val=None):
         if self.acquiring:
             raise RuntimeError("Can't do this while acquiring data!")
